@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "montreal-wedding-rsvp",
+  "main": "vinext/server/fetch-handler",
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "secrets": {
+    "required": ["RSVP_APPS_SCRIPT_URL", "RSVP_SHARED_SECRET"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

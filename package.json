@@ -2,6 +2,7 @@
   "name": "sites-project",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@12.3.4",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -9,6 +10,8 @@
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
+    "deploy": "vinext build && wrangler deploy --config dist/server/wrangler.json",
+    "deploy:dry-run": "vinext build && wrangler deploy --config dist/server/wrangler.json --dry-run",
     "test": "node --experimental-strip-types --test tests/*.test.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
