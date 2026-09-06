@@ -534,7 +534,7 @@ export default function Home() {
                       setPartyName(event.target.value);
                       setLookupError('');
                     }}
-                    placeholder="e.g. Musgraves"
+                    placeholder="e.g. The Thorpe Family"
                     autoComplete="off"
                     aria-invalid={Boolean(lookupError)}
                     aria-describedby={lookupError ? 'lookup-error' : undefined}
