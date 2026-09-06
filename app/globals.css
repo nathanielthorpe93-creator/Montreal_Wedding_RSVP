@@ -1,0 +1,87 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-display);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+}
+
+:root {
+  --background: #f4eddf;
+  --foreground: #390908;
+  --card: #f7f0e4;
+  --card-foreground: #390908;
+  --primary: #390908;
+  --primary-foreground: #f7f0e4;
+  --secondary: #e5d7c2;
+  --secondary-foreground: #390908;
+  --muted: #e5d7c2;
+  --muted-foreground: #72514c;
+  --accent: #6d1917;
+  --accent-foreground: #fffaf0;
+  --destructive: #a42820;
+  --border: #baa998;
+  --input: #baa998;
+  --ring: #6d1917;
+  --radius: 0;
+}
+
+.dark {
+  --background: #280605;
+  --foreground: #f7f0e4;
+  --card: #390908;
+  --card-foreground: #f7f0e4;
+  --primary: #f7f0e4;
+  --primary-foreground: #390908;
+  --secondary: #5b1412;
+  --secondary-foreground: #f7f0e4;
+  --muted: #5b1412;
+  --muted-foreground: #dcc8bb;
+  --accent: #e5d7c2;
+  --accent-foreground: #390908;
+  --destructive: #ef7c70;
+  --border: #f7f0e433;
+  --input: #f7f0e44d;
+  --ring: #e5d7c2;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; font-family: var(--font-body), Arial, sans-serif; }
+  button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+}
+
+.font-display { font-family: var(--font-display), Georgia, serif; }
+.paper { background-color: #f4eddf; background-image: url('/ivory-paper.png'); background-size: 900px auto; }
+.eyebrow { font-size: 0.68rem; font-weight: 650; letter-spacing: 0.19em; text-transform: uppercase; }
+
+::selection { background: #390908; color: #f7f0e4; }
+
+@media (prefers-reduced-motion: no-preference) {
+  main > section:last-child > div { animation: rise-in 700ms cubic-bezier(.2,.75,.25,1) both; }
+  @keyframes rise-in { from { opacity: 0; transform: translateY(12px); } }
+}
